@@ -9,8 +9,8 @@ Run `npm install` from the root dir
 
 **IOS:**
 1. Run `pod install` from `./ios`
-2. Run `npx react-native run-ios` from the root dir
+2. Run `yarn ios` from the root dir
 
 **Android:** 
 1. Open the `android` dir in Android Studio the first time you clone the repo, sync with gradle and run from Android Studio. 
-2. After this you can run `npx react-native run-android` from root dir in the terminal.
+2. After this you can run `yarn android` from root dir in the terminal.
