@@ -1,1 +1,1 @@
-const main = ['#FFCB37', '#312B77', '#FFFFFF'];
+const mainColors = ['#FFCB37', '#312B77', '#FFFFFF'];
