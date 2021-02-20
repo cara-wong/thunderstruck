@@ -1,1 +1,1 @@
-const mainColors = ['#FFCB37', '#312B77', '#FFFFFF'];
+export const mainColors = ['#FFCB37', '#312B77', '#FFFFFF'];
