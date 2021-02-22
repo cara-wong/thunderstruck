@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { mainColors } from "../constants/colours/appColors"
+import { MainButton } from "../components/button";
 
 export function Start(props) {
     return (
@@ -8,7 +9,11 @@ export function Start(props) {
         <View style={styles.topBlock}>
             <Image style={styles.logo} source={require('../assets/images/logo-placeholder.png')}/>
         </View>
-        <View style={styles.bottomBlock}></View>
+        <View style={styles.bottomBlock}>
+            <View style={styles.buttonContainer}>
+                <MainButton/>
+            </View>
+        </View>
     </View>
     )
 }
@@ -24,4 +29,5 @@ const styles = StyleSheet.create({
         backgroundColor: mainColors[1],
         height: '50%',
     },
+    buttonContainer: {}
 });
