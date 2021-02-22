@@ -11,7 +11,7 @@ export function Start(props) {
         </View>
         <View style={styles.bottomBlock}>
             <View style={styles.buttonContainer}>
-                <MainButton/>
+                <MainButton title='Login'/>
             </View>
         </View>
     </View>
