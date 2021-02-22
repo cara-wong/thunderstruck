@@ -12,6 +12,7 @@ export function Start(props) {
         <View style={styles.bottomBlock}>
             <View style={styles.buttonContainer}>
                 <MainButton title='Login'/>
+                <MainButton style={styles.bottomButton} title='Sign Up'/>
             </View>
         </View>
     </View>
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
     bottomBlock: {
         backgroundColor: mainColors[1],
         height: '50%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    buttonContainer: {}
 });
