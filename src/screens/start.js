@@ -10,9 +10,9 @@ export function Start(props) {
             <Image style={styles.logo} source={require('../assets/images/logo-placeholder.png')}/>
         </View>
         <View style={styles.bottomBlock}>
-            <View style={styles.buttonContainer}>
+            <View>
                 <MainButton title='Login'/>
-                <MainButton style={styles.bottomButton} title='Sign Up'/>
+                <MainButton title='Sign Up'/>
             </View>
         </View>
     </View>
