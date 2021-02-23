@@ -17,13 +17,26 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import { Start } from './src/screens/start';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Start/>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen
+          name="Start"
+          component={ Start }
+          options={{ title: "Start" }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
