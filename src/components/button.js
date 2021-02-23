@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
         width: 216,
         borderRadius: 30,
         justifyContent: 'center',
-        marginVertical: 10,
+        marginVertical: 20,
     },
 });
