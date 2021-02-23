@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Test } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { mainColors } from "../constants/colours/appColors"
 import { MainButton } from "../components/button";
 

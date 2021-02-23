@@ -20,6 +20,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { Start } from './src/screens/start';
+import { SignUp } from './src/screens/signup';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,11 @@ const App = () => {
           name="Start"
           component={ Start }
           options={{ title: "Start" }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={ SignUp }
+          options={{ title: "SignUp" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

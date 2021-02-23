@@ -5,7 +5,7 @@ import { mainColors } from "../constants/colours/appColors";
 export function MainButton(props) {
     return (
         <View style={styles.button}>
-            <Button title={props.title} color='black'></Button>
+            <Button title={props.title} color='black' onPress={props.onPress}></Button>
         </View>
     )
 }
