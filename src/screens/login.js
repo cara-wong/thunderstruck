@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-export function SignUp(props) {
+export function Login(props) {
     return (
     <View style={styles.container}>
         <Text style={styles.font}>Placeholder</Text>
