@@ -5,13 +5,16 @@ import { MainButton } from "../components/button";
 
 export function SignUp(props) {
     return (
-    <View>
-        <Text style={styles.font}>Test</Text>
+    <View style={styles.container}>
+        <Text style={styles.font}>Placeholder</Text>
     </View>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginTop: 50
+    },
     font: {
         fontSize: 30,
     }
