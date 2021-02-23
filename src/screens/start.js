@@ -13,7 +13,7 @@ export function Start(props) {
         </View>
         <View style={styles.bottomBlock}>
             <View>
-                <MainButton title='Login'/>
+                <MainButton title='Login' onPress={() => props.navigation.navigate('Login')}/>
                 <MainButton title='Sign Up' onPress={() => {props.navigation.navigate('SignUp')}}/>
             </View>
         </View>
