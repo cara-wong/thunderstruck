@@ -16,12 +16,15 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { Start } from './src/screens/start';
 
 const App = () => {
   return (
-    <Start/>
+    <NavigationContainer>
+      <Start/>
+    </NavigationContainer>
   );
 };
 
