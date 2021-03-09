@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "134321475013",
+    "project_id": "thunderstruck-5e5d6",
+    "storage_bucket": "thunderstruck-5e5d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134321475013:android:d76e96d15b18dbca614fac",
+        "android_client_info": {
+          "package_name": "com.thunderstruck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134321475013-alm2gj8onfjmhft2o36tksq26n3rtinl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOYmv0iAH1UIMfDReY_pbiVeDrppknwSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134321475013-alm2gj8onfjmhft2o36tksq26n3rtinl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "134321475013-998te1b3r4044981k39v6igq216jsac7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.thunderstruck"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

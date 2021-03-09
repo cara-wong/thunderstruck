@@ -22,6 +22,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Start } from './src/screens/start';
 import { SignUp } from './src/screens/signup';
 import { Login } from './src/screens/login';
+import { Profile } from './src/screens/profile';
+import { CreateProfile } from './src/screens/createProfile';
+
+
 
 const Stack = createStackNavigator();
 
@@ -47,6 +51,16 @@ const App = () => {
           name="Login"
           component={ Login }
           options={{ title: "Login" }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ Profile }
+          options={{ title: "Profile" }}
+        />
+         <Stack.Screen
+          name="CreateProfile"
+          component={ CreateProfile }
+          options={{ title: "CreateProfile" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
