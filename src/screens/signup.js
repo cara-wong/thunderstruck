@@ -6,29 +6,56 @@ import CheckBox from '@react-native-community/checkbox';
 import { MainButton } from "../components/button";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useState } from "react";
+import firebase from "@react-native-firebase/app";
 
 
 
 export function SignUp(props) {
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const[password, setPassword] = useState(null);
+    const[confirm_password, setCPassword] = useState(null);
+    const registerUser = () => {
+        if(name && email && password && confirm_password)
+            if(password == confirm_password){
+                firebase
+                .auth()
+                .createUserWithEmailandPassword(email,password)
+                .then((user) => {
+                    alert(JSON.stringify(user)) ;
+                })
+                .catch((err) => {
+                    alert(err);
+                });
+
+            }else alert("Passwords Don't Match");
+            else alert("Please fill the form in correctly");
+            
+    }
     return (
     <View style={styles.container}>
-        <Text style={styles.font}>Placeholder</Text>
+        <Text style={styles.font}></Text>
         <View style={styles.header}>
             <Text style={styles.header}>Sign Up</Text>
         </View>
         <View style={styles.body}>
             <Text style={styles.body}>Name</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput style = {styles.input}
+            onChangeText={(text) => setName(text)}></TextInput>
 
 
             <Text style={styles.body}>UBC Email</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput style = {styles.input}
+             onChangeText={(text) => setEmail(text)} ></TextInput>
              <Text style={styles.body}>Password</Text>
-             <TextInput style = {styles.input}></TextInput>
+             <TextInput style = {styles.input}
+             onChangeText={(text) => setPassword(text)}></TextInput>
 
 
             <Text style={styles.body}>Re-Type Password</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput style = {styles.input}
+            onChangeText={(text) => setCPassword(text)}></TextInput>
 
             <CheckBox onCheckColor={'#FFCB37'} onTintColor={'#FFCB37'} style={styles.checkbox}></CheckBox>
             <Text style={styles.boxText} >Please verify that you are over 18 years of age</Text>
@@ -53,11 +80,11 @@ const styles = StyleSheet.create({
         color: '#FFFFFF'
     },
     body: {
-        marginLeft: 30,
         padding: 4,
         marginTop: 20,
         fontSize: 20,
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        alignItems: 'center'
     },
 
     container: {
@@ -80,14 +107,13 @@ const styles = StyleSheet.create({
         marginLeft: 30,
     },
     checkbox: {
-        marginTop: 60,
-        marginLeft: 25
-    },
+        marginTop: 50,
+        marginLeft: -200
+ },
     boxText: {
         fontSize:15,
         color: '#FFFFFF',
-        marginLeft: 70,
         marginTop: -30,
-
-    }
+        
+      }
 }); 

@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 export function Login(props) {
     return (
         <View style={styles.container}>
-        <Text style={styles.font}>Placeholder</Text>
+        <Text style={styles.font}></Text>
         <View style={styles.header}>
             <Text style={styles.header}>Login</Text>
         </View>
@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
         color: '#FFFFFF'
     },
     body: {
-        marginLeft: 30,
         padding: 5,
         marginTop: 30,
         fontSize: 20,
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        alignItems: "center"
     },
 
     container: {
