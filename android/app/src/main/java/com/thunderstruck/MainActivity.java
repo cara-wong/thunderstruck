@@ -1,4 +1,4 @@
-package com.thunderstruck;
+package com.cc.thunderstruck;
 
 import com.facebook.react.ReactActivity;
 
