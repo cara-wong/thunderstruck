@@ -57,9 +57,9 @@ export function SignUp(props) {
 
     async function createAccount() {
         if (await hasValidInfo()) {
-            let response = await auth().createUserWithEmailAndPassword(email, password)
+            await auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
-              console.log('User account created & signed in!');
+              console.log('User', email, 'acreated & signed in!');
               // todo: send verification email
               props.navigation.navigate('CreateProfile');
             })
