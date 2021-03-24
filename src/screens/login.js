@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
 import { MainButton } from "../components/button";
+import auth from '@react-native-firebase/auth';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
 
 export function Login(props) {
+
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    async function login() {
+        await setEmail(email.trim());
+        await auth().signInWithEmailAndPassword(email, password).then( (res) => {
+            console.log(res.user.email, 'was signed in successfully');
+            props.navigation.navigate('CreateProfile');
+        }).catch((err) => {
+            alert("Your email or password was incorrect");
+        });
+    }
+
     return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -14,15 +29,15 @@ export function Login(props) {
         </View>
         <View style={styles.body}>
              <Text style={styles.body}>Email</Text>
-             <TextInput style = {styles.input}></TextInput>
+             <TextInput style={styles.input} onChangeText={(email) => setEmail(email)}></TextInput>
 
 
             <Text style={styles.body}>Password</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput style={styles.input} onChangeText={(password) => setPassword(password)}></TextInput>
 
         </View>
         <View style={styles.button}>
-            <MainButton style={styles.button} title='Submit' onPress={() => props.navigation.navigate('Profile')}/>
+            <MainButton style={styles.button} title='Submit' onPress={() => login()}/>
 
         </View>
             
