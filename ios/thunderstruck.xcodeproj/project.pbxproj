@@ -212,6 +212,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				6104FD3685027AD32F89BB1E /* [CP] Copy Pods Resources */,
+				6572DE9F721F3D96FAA745F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +236,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				2727A86AF87EFBD1087FF109 /* [CP] Copy Pods Resources */,
 				135696B2BEEC7F0CE22E5D25 /* [CP-User] [RNFB] Core Configuration */,
+				4EC437FACC402AD995BB1880 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +425,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		4EC437FACC402AD995BB1880 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thunderstruck/Pods-thunderstruck-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thunderstruck/Pods-thunderstruck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6104FD3685027AD32F89BB1E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +459,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thunderstruck-thunderstruckTests/Pods-thunderstruck-thunderstruckTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6572DE9F721F3D96FAA745F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thunderstruck-thunderstruckTests/Pods-thunderstruck-thunderstruckTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thunderstruck-thunderstruckTests/Pods-thunderstruck-thunderstruckTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		79F0DE5D740D3E4806814F52 /* [CP] Check Pods Manifest.lock */ = {

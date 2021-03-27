@@ -1,6 +1,10 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TextInput } from "react-native";
 import Video from 'react-native-video';
+import { MainButton } from "../components/button";
+
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+
 
 
 export function Profile(props) {
@@ -15,11 +19,31 @@ export function Profile(props) {
         repeat={true}
         paused={false}
         volume={0}
-        style={{width:"100%",height:"100%", opacity: .7, }}/>
-        <View style={styles.content}>
-          <Text style={styles.text}>Hello</Text>
-        </View>
+        style={{width:"100%",height:"100%", opacity: .7 }}/>
+    
+        <Card style={styles.Card}>
+            <Card.Actions>
+                <Button style={styles.button1} onPress={() => props.navigation.navigate('CreateProfile')}>Log In</Button>
+                <Button style={styles.button2}>Ok</Button>
+            </Card.Actions>
+            <Card.Title title="Log In" />
+            <Card.Content>
+                <View style={styles.body}>
+             <Text style={styles.body}>Email</Text>
+             <TextInput style = {styles.input}></TextInput>
 
+
+            <Text style={styles.body}>Password</Text>
+            <TextInput style = {styles.input}></TextInput>
+
+        </View>
+        <View style={styles.button}>
+            <MainButton style={styles.button} title='Submit' onPress={() => props.navigation.navigate('Profile')}/>
+
+        </View>
+            </Card.Content>
+           
+        </Card> 
         
         
 
@@ -33,15 +57,26 @@ const styles = StyleSheet.create({
         width:"100%",
         
     },
-     
-    content: {
-        flex: 1,
-        justifyContent: 'center',
+    Card: {
+        marginTop: "50%",
+        marginLeft: "5%",
+        marginRight: "5%",
+        alignItems: "center",
+        width: "90%",
+        height: "60%",
+        position: "absolute",
+        backgroundColor: "rgba(245, 245, 245, 1)",
+        opacity: .6,
+        borderColor: 'rgba(158, 150, 150, 0)'
+
     },
-    text: {
-        fontSize: 20,
-        color: '#FFCB37',
-        textAlign: 'center',
-        margin: 10,
+    button1: {
+        paddingRight: "50%"
     },
+    button: {
+        marginTop: "30%"
+    }
+
+
+   
 }); 

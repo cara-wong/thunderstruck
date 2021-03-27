@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { mainColors } from "../constants/colours/appColors"
 import { MainButton } from "../components/button";
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
