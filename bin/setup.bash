@@ -5,7 +5,7 @@ if [[ $? != 0 ]]; then
     echo "Node not installed!"
     exit 1
 else
-	read -r -p "Is this node version okay? [Y/n] " confirm
+	read -r -p "Is this node version okay? [y/n] " confirm
 	if [[ ! $confirm =~ ^[Yy]$ ]]; then	
 		echo "exiting."
 		exit 0
