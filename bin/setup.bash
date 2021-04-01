@@ -15,4 +15,4 @@ yarn install # check if yarn install works
 cd ios || exit 1
 pod install --repo-update
 cd ..
-echo "Node modules and pods successfully installed."
+echo "Node modules and pods successfully installed! :)"
