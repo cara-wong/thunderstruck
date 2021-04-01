@@ -22,6 +22,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Start } from './src/screens/start';
 import { SignUp } from './src/screens/signup';
 import { Login } from './src/screens/login';
+import { CreateProfile } from "./src/screens/createProfile";
+import { Profile } from "./src/screens/profile";
 
 const Stack = createStackNavigator();
 
@@ -43,12 +45,23 @@ const App = () => {
           component={ SignUp }
           options={{ title: "SignUp" }}
         />
-        <Stack.Screen
+         <Stack.Screen
           name="Login"
           component={ Login }
           options={{ title: "Login" }}
         />
+        <Stack.Screen
+          name="Profile"
+          component={ Profile }
+          options={{ title: "Profile" }}
+        />
+        <Stack.Screen
+          name="CreateProfile"
+          component={ CreateProfile }
+          options={{ title: "CreateProfile" }}
+        />
       </Stack.Navigator>
+      
     </NavigationContainer>
   );
 };
