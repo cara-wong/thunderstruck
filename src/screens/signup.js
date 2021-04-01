@@ -101,7 +101,7 @@ export function SignUp(props) {
             <Text style={styles.body}>Password</Text>
             <TextInput style={styles.input} onChangeText={(password) => setPassword(password)}></TextInput>
 
-            <Text style={styles.body}>Re-Type Password</Text>
+            <Text style={styles.body}>Confirm Password</Text>
             <TextInput style={styles.input} onChangeText={(confirmPassword) => setConfirmPassword(confirmPassword)}></TextInput>
 
             <CheckBox value={isEighteen} onValueChange={setCheckBox} onCheckColor={'#FFCB37'} onTintColor={'#FFCB37'} style={styles.checkbox}></CheckBox>
