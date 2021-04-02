@@ -52,11 +52,7 @@ const styles = StyleSheet.create({
         
         color: '#FFFFFF'
     },
-    body: {
-     
-       
-       
-    },
+
 
     container: {
         flex: 1,
@@ -74,6 +70,7 @@ const styles = StyleSheet.create({
         borderWidth: 3, 
         borderBottomColor: '#FFCB37', 
         width: 300, 
+        color: "#FFFFFF",
     },
     text: {
         fontSize: 20,

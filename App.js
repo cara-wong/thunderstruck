@@ -24,6 +24,9 @@ import { SignUp } from './src/screens/signup';
 import { Login } from './src/screens/login';
 import { CreateProfile } from "./src/screens/createProfile";
 import { Profile } from "./src/screens/profile";
+import { CreateProfile2 } from "./src/screens/createProfile2";
+import { UploadPhotos } from "./src/screens/uploadPhotos";
+
 
 const Stack = createStackNavigator();
 
@@ -59,6 +62,16 @@ const App = () => {
           name="CreateProfile"
           component={ CreateProfile }
           options={{ title: "CreateProfile" }}
+        />
+        <Stack.Screen
+          name="CreateProfile2"
+          component={ CreateProfile2 }
+          options={{ title: "CreateProfile2" }}
+        />
+         <Stack.Screen
+          name="UploadPhotos"
+          component={ UploadPhotos }
+          options={{ title: "UploadPhotos" }}
         />
       </Stack.Navigator>
       
