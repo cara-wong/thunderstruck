@@ -2,8 +2,8 @@ import React from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
 import { MainButton } from "../components/button";
 
-
 export function CreateProfile2(props) {
+    
     return (
     <View style={styles.container}>
        <View style={styles.headerContainer}>
@@ -11,6 +11,7 @@ export function CreateProfile2(props) {
         </View>
         <View style={styles.body}>
             <TextInput style = {styles.input} placeholder="Your favorite UBC prof" placeholderTextColor="#FFFFFF"/>
+           
 
 
             <TextInput style = {styles.input}></TextInput>

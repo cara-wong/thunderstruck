@@ -1,8 +1,10 @@
 import React from "react";
-import { View, StyleSheet, Text, TextInput } from "react-native";
+import { View, StyleSheet, Text, TextInput, Image, KeyboardAvoidingView } from "react-native";
 import { MainButton } from "../components/button";
 import {useState} from "react";
 import {Picker} from '@react-native-picker/picker';
+import ModalDropdown from 'react-native-modal-dropdown';
+
 
 
 
@@ -18,25 +20,42 @@ export function CreateProfile(props) {
             <Text style={styles.header}>Create Your Profile</Text>
         </View>
         <View style={styles.body}>
+            <KeyboardAvoidingView>
             <Text style={styles.text}>Name</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput style = {styles.input}
+            keyboardAppearance={"dark"}></TextInput>
 
 
             <Text style={styles.text}>Age</Text>
-            <TextInput style = {styles.input}></TextInput>
+            <TextInput 
+            style = {styles.input}
+            keyboardType={"numeric"}
+            keyboardAppearance={"dark"}></TextInput>
              <Text style={styles.text} >Year</Text>
-             <TextInput style = {styles.input} ></TextInput>
+             <TextInput style = {styles.input}
+             keyboardType={"numeric"}
+             keyboardAppearance={"dark"} ></TextInput>
 
 
             <Text style={styles.text}>Faculty </Text>
-            <Picker
+            {/* <Picker
                 selectedValue={selectedLanguage}
                 onValueChange={(itemValue, itemIndex) =>
                 setSelectedLanguage(itemValue)
                 }>
                 <Picker.Item label="First" value="java" />
                 <Picker.Item label="Second" value="js" />
-            </Picker>
+            </Picker> */}
+            <ModalDropdown 
+            textStyle={styles.mdText}
+            dropdownStyle={styles.dropdown}
+            dropdownTextHighlightStyle={styles.highlightDD}
+            isFullWidth={true}
+            defaultValue={"Choose Faculty"}
+            dropdownTextStyle={styles.ddText}
+
+            options={['Arts', 'Science', 'Sauder']}  />
+            </KeyboardAvoidingView>
         </View>
        
         <View style={styles.buttonContainer}>
@@ -79,4 +98,21 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         marginTop: "10%"
     },
+    dropdown: {
+        backgroundColor: '#FFCB37'
+
+        
+    },
+    mdText: {
+        fontSize: 20,
+        color: '#FFFFFF'
+
+    },
+    ddText:{
+       backgroundColor: '#FFCB37',
+       fontSize: 15
+    },
+    highlightDD:{
+        backgroundColor: "#FFFFFF"
+    }
 }); 
