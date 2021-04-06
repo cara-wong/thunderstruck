@@ -13,6 +13,7 @@ export function Login(props) {
     const [password, setPassword] = useState(null);
 
     async function login() {
+        // TODO: add check and add catch for if email or password field is empty
         await setEmail(email.trim());
         // TODO: check if the account has been verified
         await auth().signInWithEmailAndPassword(email, password).then( (res) => {

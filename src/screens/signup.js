@@ -61,12 +61,11 @@ export function SignUp(props) {
             .then(() => {
               console.log('User', email, 'acreated & signed in!');
               auth().currentUser?.sendEmailVerification().then(() => {
-                  // TODO: make alert lines wrap (cut off currently)
-                alert("A verfication email has been sent to", email + ". After verifying your email, you can login to your account.");
+                alert("A verfication email has been sent to " + email + ". After verifying your email, you can login to your account.");
                 props.navigation.navigate('Login');
               }).catch((error) => {
                   // TODO: better error alert
-                  alert("An error occured. Please try again later");
+                  alert("An error occured.\nPlease try again later");
               })
             })
             .catch(error => {
