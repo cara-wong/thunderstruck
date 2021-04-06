@@ -13,12 +13,14 @@ export function Login(props) {
     const [password, setPassword] = useState(null);
 
     async function login() {
-        // TODO: add check and add catch for if email or password field is empty
+        if (!email || !password) {
+            alert("Please type your email and password to login.");
+            return;
+        }
         await setEmail(email.trim());
         // TODO: check if the account has been verified
         await auth().signInWithEmailAndPassword(email, password).then( (res) => {
             console.log(res.user.email, 'was signed in successfully');
-            // TODO: only go to create profile if it has not already been filled in
             props.navigation.navigate('CreateProfile');
         }).catch((err) => {
             alert("Your email or password was incorrect");
