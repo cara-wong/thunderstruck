@@ -60,8 +60,14 @@ export function SignUp(props) {
             await auth().createUserWithEmailAndPassword(email, password)
             .then(() => {
               console.log('User', email, 'acreated & signed in!');
-              // todo: send verification email
-              props.navigation.navigate('CreateProfile');
+              auth().currentUser?.sendEmailVerification().then(() => {
+                  // TODO: make alert lines wrap (cut off currently)
+                alert("A verfication email has been sent to", email + ". After verifying your email, you can login to your account.");
+                props.navigation.navigate('Login');
+              }).catch((error) => {
+                  // TODO: better error alert
+                  alert("An error occured. Please try again later");
+              })
             })
             .catch(error => {
               if (error.code === 'auth/email-already-in-use') {

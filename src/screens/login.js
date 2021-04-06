@@ -14,8 +14,10 @@ export function Login(props) {
 
     async function login() {
         await setEmail(email.trim());
+        // TODO: check if the account has been verified
         await auth().signInWithEmailAndPassword(email, password).then( (res) => {
             console.log(res.user.email, 'was signed in successfully');
+            // TODO: only go to create profile if it has not already been filled in
             props.navigation.navigate('CreateProfile');
         }).catch((err) => {
             alert("Your email or password was incorrect");
