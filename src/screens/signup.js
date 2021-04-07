@@ -63,12 +63,13 @@ export function SignUp(props) {
               auth().currentUser?.sendEmailVerification().then(() => {
                 alert("A verfication email has been sent to " + email + ". After verifying your email, you can login to your account.");
                 props.navigation.navigate('Login');
+                return auth().signOut();
               }).catch((error) => {
-                  // TODO: better error alert
                   alert("An error occured.\nPlease try again later");
               })
             })
             .catch(error => {
+                // TODO: clear form if an error occurs
               if (error.code === 'auth/email-already-in-use') {
                 alert('That email address is already in use!');
                 return;
@@ -97,11 +98,11 @@ export function SignUp(props) {
         </View>
         <View style={styles.body}>
             <Text style={styles.body}>Name</Text>
-            <TextInput style={styles.input} onChangeText={(text) => setName(text)}></TextInput>
+            <TextInput style={styles.input} onChangeText={(text) => setName(text.trim())}></TextInput>
 
 
             <Text style={styles.body}>UBC Email</Text>
-            <TextInput style={styles.input} onChangeText={(email) => setEmail(email)}></TextInput>
+            <TextInput style={styles.input} onChangeText={(email) => setEmail(email.trim())}></TextInput>
 
             <Text style={styles.body}>Password</Text>
             <TextInput style={styles.input} onChangeText={(password) => setPassword(password)}></TextInput>

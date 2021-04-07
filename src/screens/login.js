@@ -20,10 +20,22 @@ export function Login(props) {
         await setEmail(email.trim());
         // TODO: check if the account has been verified
         await auth().signInWithEmailAndPassword(email, password).then( (res) => {
-            console.log(res.user.email, 'was signed in successfully');
-            props.navigation.navigate('CreateProfile');
-        }).catch((err) => {
-            alert("Your email or password was incorrect");
+            if (auth().currentUser?.emailVerified) {
+                console.log(res.user.email, 'was signed in successfully');
+                props.navigation.navigate('CreateProfile');
+            } else {
+                // TODO: clear form
+                alert("Please verify your email before using Thunderstruck.");
+                return auth().signOut();
+            }
+        })
+        .catch((err) => {
+            // TODO: clear form
+            if (err.code === "auth/user-not-found") {
+                alert("This user does not exist.");
+            } else {
+                alert("Your email or password was incorrect"); 
+            }
         });
     }
 
@@ -34,7 +46,7 @@ export function Login(props) {
         </View>
         <View style={styles.body}>
              <Text style={styles.body}>Email</Text>
-             <TextInput style={styles.input} onChangeText={(email) => setEmail(email)}></TextInput>
+             <TextInput style={styles.input} onChangeText={(email) => setEmail(email.toLowerCase().trim())}></TextInput>
 
 
             <Text style={styles.body}>Password</Text>
