@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-export function Profile(props) {
+export function UploadPhotos(props) {
     return (
     <View style={styles.container}>
         <Text style={styles.font}>Placeholder</Text>

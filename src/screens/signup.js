@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
-import CheckBox from '@react-native-community/checkbox';
 import auth from '@react-native-firebase/auth';
+import CheckBox from '@react-native-community/checkbox';
 
 import { MainButton } from "../components/button";
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, HeaderStyleInterpolators } from '@react-navigation/stack';
-
-
+import { createStackNavigator } from '@react-navigation/stack';
 
 export function SignUp(props) {
 
@@ -93,76 +91,82 @@ export function SignUp(props) {
 
     return (
     <View style={styles.container}>
-        <View style={styles.header}>
+        <View style={styles.headerContainer}>
             <Text style={styles.header}>Sign Up</Text>
         </View>
         <View style={styles.body}>
-            <Text style={styles.body}>Name</Text>
-            <TextInput style={styles.input} onChangeText={(text) => setName(text.trim())}></TextInput>
+            <Text style={styles.text}>Name</Text>
+            <TextInput style = {styles.input} onChangeText={(text) => setName(text.trim())}></TextInput>
 
 
-            <Text style={styles.body}>UBC Email</Text>
-            <TextInput style={styles.input} onChangeText={(email) => setEmail(email.trim())}></TextInput>
+            <Text style={styles.text}>UBC Email</Text>
+            <TextInput style = {styles.input} onChangeText={(email) => setEmail(email.trim())}></TextInput>
+             <Text style={styles.text} >Password</Text>
+             <TextInput style = {styles.input}  secureTextEntry={true} onChangeText={(password) => setPassword(password)}></TextInput>
 
-            <Text style={styles.body}>Password</Text>
-            <TextInput style={styles.input} onChangeText={(password) => setPassword(password)}></TextInput>
 
-            <Text style={styles.body}>Confirm Password</Text>
-            <TextInput style={styles.input} onChangeText={(confirmPassword) => setConfirmPassword(confirmPassword)}></TextInput>
-
-            <CheckBox value={isEighteen} onValueChange={setCheckBox} onCheckColor={'#FFCB37'} onTintColor={'#FFCB37'} style={styles.checkbox}></CheckBox>
-            <Text style={styles.boxText} >Please verify that you are over 18 years of age</Text>
+            <Text style={styles.text}>Confirm Password</Text>
+            <TextInput style = {styles.input} secureTextEntry={true} onChangeText={(confirmPassword) => setConfirmPassword(confirmPassword)}></TextInput>
 
         </View>
-        <View style={styles.button}>
+        <View style={styles.checkbox}>
+                <CheckBox value={isEighteen} onValueChange={setCheckBox} onCheckColor={'#FFCB37'} onTintColor={'#FFCB37'}></CheckBox>
+                <Text style={styles.boxText} >Please verify that you are over 18 years of age</Text>
+
+        </View>
+        <View style={styles.buttonContainer}>
             <MainButton style={styles.button} title='Submit' onPress={() => createAccount()}/>
-        </View> 
+
+        </View>
     </View>
     )
 }
 
 const styles = StyleSheet.create({
     header: {
-        marginTop: 90,
+        
         fontSize: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#FFFFFF'
-    },
-    body: {
-        marginLeft: 30,
-        padding: 4,
-        marginTop: 20,
-        fontSize: 20,
+        
         color: '#FFFFFF'
     },
 
+
     container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
         height: '100%',
         backgroundColor: '#312B77',
     },
-    button: {
-        padding: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+ 
+  
     input: {
+
         height: 30, 
         borderColor: 'rgba(158, 150, 150, 0)', 
         borderWidth: 3, 
         borderBottomColor: '#FFCB37', 
         width: 300, 
-        marginLeft: 30,
+        color: "#FFFFFF",
+    },
+    text: {
+        fontSize: 20,
+        color: '#FFFFFF',
+        marginTop: "10%"
     },
     checkbox: {
-        marginTop: 60,
-        marginLeft: 25
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: "8%"
+        
     },
     boxText: {
-        fontSize:15,
+        fontSize:16,
         color: '#FFFFFF',
-        marginLeft: 70,
-        marginTop: -30,
+        padding: "2%"
+        
+   
 
-    }
-});
+    },
+  
+}); 

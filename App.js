@@ -22,8 +22,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Start } from './src/screens/start';
 import { SignUp } from './src/screens/signup';
 import { Login } from './src/screens/login';
-import { Profile } from './src/screens/profile';
-import { CreateProfile } from './src/screens/createProfile';
+import { CreateProfile } from "./src/screens/createProfile";
+import { Profile } from "./src/screens/profile";
+import { CreateProfile2 } from "./src/screens/createProfile2";
+import { UploadPhotos } from "./src/screens/uploadPhotos";
+
 
 const Stack = createStackNavigator();
 
@@ -45,7 +48,7 @@ const App = () => {
           component={ SignUp }
           options={{ title: "SignUp" }}
         />
-        <Stack.Screen
+         <Stack.Screen
           name="Login"
           component={ Login }
           options={{ title: "Login" }}
@@ -60,7 +63,18 @@ const App = () => {
           component={ CreateProfile }
           options={{ title: "CreateProfile" }}
         />
+        <Stack.Screen
+          name="CreateProfile2"
+          component={ CreateProfile2 }
+          options={{ title: "CreateProfile2" }}
+        />
+         <Stack.Screen
+          name="UploadPhotos"
+          component={ UploadPhotos }
+          options={{ title: "UploadPhotos" }}
+        />
       </Stack.Navigator>
+      
     </NavigationContainer>
   );
 };
